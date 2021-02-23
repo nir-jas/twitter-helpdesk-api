@@ -326,6 +326,31 @@ class Twitter {
 				});
 		});
 	}
+
+	getTweetConversionId(tweetId) {
+		try {
+			return new Promise(async (resolve, reject) => {
+				axios({
+					url: `/2/tweets`,
+					headers: {
+						Authorization: `Bearer ${await this.getBearerToken()}`,
+					},
+					params: {
+						ids: tweetId,
+						"tweet.fields": "conversation_id",
+					},
+				})
+					.then((response) => {
+						resolve(response.data);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+			});
+		} catch (error) {
+			console.log(error.response.data);
+		}
+	}
 }
 
 module.exports = Twitter;
