@@ -1,0 +1,43 @@
+{
+	"name": "rpt-twitter-helpdesk-api",
+	"version": "1.0.0",
+	"adonis-version": "4.1.0",
+	"description": "RPT Twitter HelpDesk API",
+	"main": "index.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "node ace test"
+	},
+	"keywords": [
+		"adonisjs",
+		"adonis-app"
+	],
+	"author": "",
+	"license": "UNLICENSED",
+	"private": true,
+	"dependencies": {
+		"@adonisjs/ace": "^5.0.8",
+		"@adonisjs/auth": "^3.1.0",
+		"@adonisjs/bodyparser": "^2.0.5",
+		"@adonisjs/cors": "^1.0.7",
+		"@adonisjs/fold": "^4.0.9",
+		"@adonisjs/framework": "^5.0.9",
+		"@adonisjs/ignitor": "^2.0.8",
+		"@adonisjs/lucid": "^6.2.1",
+		"@adonisjs/validator": "^5.0.6",
+		"@adonisjs/websocket": "^1.0.12",
+		"axios": "^0.21.1",
+		"axios-oauth-1.0a": "^0.2.1",
+		"crypto": "^1.0.1",
+		"lodash": "^4.17.21",
+		"mysql": "^2.18.1",
+		"oauth-1.0a": "^2.2.6",
+		"qs": "^6.9.6",
+		"twit": "^2.2.11",
+		"uuid": "^8.3.2"
+	},
+	"devDependencies": {},
+	"autoload": {
+		"App": "./app"
+	}
+}
