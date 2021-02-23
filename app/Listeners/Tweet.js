@@ -15,6 +15,7 @@ Tweet.created = async (event) => {
 			if (tweet && tweet.data.length > 0) {
 				tweetId = tweet.data[0].conversation_id;
 			}
+			element.conversation_id = tweetId;
 			topic = await Ws.getChannel("twitter:*").topic(
 				`twitter:${tweetId}`
 			);

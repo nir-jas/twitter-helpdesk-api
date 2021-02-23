@@ -344,6 +344,7 @@ class Twitter {
 						resolve(response.data);
 					})
 					.catch((error) => {
+						console.log(error.response);
 						reject(error);
 					});
 			});
