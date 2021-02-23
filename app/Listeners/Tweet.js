@@ -17,7 +17,7 @@ Tweet.created = async (event) => {
 			}
 		} else {
 			topic = await Ws.getChannel("twitter:*").topic(
-				`twitter:${element.in_reply_to_screen_name}`
+				`twitter:${element.conversation_id}`
 			);
 			if (topic) {
 				topic.broadcast("new:tweet", element);

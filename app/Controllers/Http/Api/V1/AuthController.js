@@ -46,7 +46,6 @@ class AuthController {
 				accessToken.oauth_token,
 				accessToken.oauth_token_secret
 			);
-			console.log(twitterUser)
 
 			let user = await User.findBy("provider_id", twitterUser.id_str);
 
