@@ -9,8 +9,10 @@ Tweet.created = async (event) => {
 		const element = event.tweet_create_events[index];
 		let topic = null;
 		if (element.in_reply_to_status_id_str) {
+			let tweetId =
+				element.conversation_id || element.in_reply_to_status_id_str;
 			topic = await Ws.getChannel("twitter:*").topic(
-				`twitter:${element.conversation_id}`
+				`twitter:${tweetId}`
 			);
 			if (topic) {
 				topic.broadcast("new:tweet:reply", element);
