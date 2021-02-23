@@ -13,6 +13,11 @@ class TweetController {
 				user.oauth_token_secret
 			);
 
+			if (tweets && tweets.length > 0)
+				tweets = _.filter(tweets, (t) => {
+					return t.in_reply_to_status_id_str == null;
+				});
+
 			response.jsend(tweets, "Requested Successfully");
 			return;
 		} catch (error) {
@@ -76,7 +81,7 @@ class TweetController {
 				user.oauth_token_secret,
 				params.tweet_id || null
 			);
-            
+
 			response.jsend(post, "Requested Successfully");
 			return;
 		} catch (error) {

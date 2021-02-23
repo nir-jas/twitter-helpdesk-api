@@ -237,7 +237,7 @@ class Twitter {
 						{
 							url: `${this.Config.get(
 								"twitter.api_url"
-							)}/1.1/statuses/mentions_timeline.json`,
+							)}/1.1/statuses/mentions_timeline.json?count=200`,
 							method: "GET",
 						},
 						{
@@ -245,6 +245,9 @@ class Twitter {
 							secret: oauthSecret,
 						}
 					),
+					params: {
+						count: 200,
+					},
 				})
 					.then((response) => {
 						resolve(response.data);
